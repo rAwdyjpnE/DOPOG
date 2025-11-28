@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=3 uid="uid://br0ti6pc8c3rm"]
+
+[ext_resource type="Texture2D" uid="uid://dhljcuablh3f6" path="res://src/Images/test_back.png" id="1_2rs6u"]
+[ext_resource type="Script" path="res://src/Scripts/ColorAns.gd" id="2_2a81j"]
+[ext_resource type="Script" path="res://src/Scripts/ChangeSceneButton.gd" id="2_tj8xe"]
+[ext_resource type="FontFile" uid="uid://b2g2q4bt2l5gy" path="res://src/Fonts/ofont.ru_Aventura.ttf" id="3_2rs6u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lasek"]
+bg_color = Color(0.52156866, 0.3882353, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1pt5o"]
+bg_color = Color(0.13333334, 0.02745098, 0.3529412, 1)
+
+[node name="Result" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+position = Vector2(980, 540)
+
+[node name="Node2D" type="Node2D" parent="CanvasGroup"]
+position = Vector2(-980, -540)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasGroup/Node2D"]
+offset_right = 1919.0
+offset_bottom = 1085.0
+texture = ExtResource("1_2rs6u")
+
+[node name="Button" type="Button" parent="CanvasGroup"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -279.0
+offset_top = 77.0
+offset_right = 276.05554
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_2rs6u")
+theme_override_font_sizes/font_size = 56
+theme_override_styles/normal = SubResource("StyleBoxFlat_lasek")
+text = "В меню"
+script = ExtResource("2_tj8xe")
+next_scene = "res://src/Scenes/test.tscn"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasGroup"]
+offset_left = -273.0
+offset_top = -62.0
+offset_right = 266.0
+offset_bottom = 40.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_2rs6u")
+theme_override_font_sizes/normal_font_size = 33
+text = "sssssss"
+script = ExtResource("2_2a81j")
+
+[node name="Button2" type="Button" parent="CanvasGroup"]
+offset_left = -279.0
+offset_top = 212.0
+offset_right = 273.0
+offset_bottom = 319.0
+theme_override_fonts/font = ExtResource("3_2rs6u")
+theme_override_font_sizes/font_size = 56
+theme_override_styles/normal = SubResource("StyleBoxFlat_1pt5o")
+text = "Назад"

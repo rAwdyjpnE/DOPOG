@@ -1,0 +1,176 @@
+[gd_scene load_steps=12 format=3 uid="uid://bvf2fw7fntvnt"]
+
+[ext_resource type="Script" path="res://src/Scripts/Input.gd" id="1_logic"]
+[ext_resource type="Script" path="res://src/Scripts/SidebarButtons.gd" id="2_sidebar"]
+[ext_resource type="Script" path="res://src/Scripts/StickerPanel.gd" id="3_panel"]
+[ext_resource type="Shader" path="res://src/Shaders/sky.gdshader" id="4_sky"]
+[ext_resource type="Script" path="res://src/Scripts/CheckAnswer.gd" id="5_check"]
+[ext_resource type="FontFile" uid="uid://b2g2q4bt2l5gy" path="res://src/Fonts/ofont.ru_Aventura.ttf" id="6_font"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sky"]
+shader = ExtResource("4_sky")
+shader_parameter/skyColor = Color(0.18, 0.2, 0.25, 1)
+shader_parameter/horizonColor = Color(0.05, 0.05, 0.08, 1)
+
+[sub_resource type="Sky" id="Sky_env"]
+sky_material = SubResource("ShaderMaterial_sky")
+
+[sub_resource type="Environment" id="Environment_quest"]
+background_mode = 2
+sky = SubResource("Sky_env")
+ambient_light_source = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn"]
+bg_color = Color(0.117647, 0.117647, 0.156863, 0.901961)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.0784314, 0.0980392, 0.137255, 0.921569)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.392157, 0.470588, 0.588235, 0.501961)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_check"]
+bg_color = Color(0.2, 0.6, 0.3, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_task"]
+bg_color = Color(0.08, 0.08, 0.1, 0.7)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="Quest" type="Node3D" node_paths=PackedStringArray("camera", "task_label")]
+script = ExtResource("1_logic")
+camera = NodePath("Camera3D")
+task_label = NodePath("UI/TaskPanel/MarginContainer/TaskLabel")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_quest")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, -0.75, 0.433013, 0, 5, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 1.5, 6.5)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Sidebar" type="VBoxContainer" parent="UI" node_paths=PackedStringArray("sticker_panel", "main_script")]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -90.0
+offset_right = 100.0
+offset_bottom = 90.0
+grow_vertical = 2
+theme_override_constants/separation = 20
+script = ExtResource("2_sidebar")
+sticker_panel = NodePath("../StickerPanel")
+main_script = NodePath("../..")
+
+[node name="BtnToggle" type="Button" parent="UI/Sidebar"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn")
+text = "📋"
+
+[node name="BtnClear" type="Button" parent="UI/Sidebar"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn")
+text = "🧹"
+
+[node name="StickerPanel" type="Panel" parent="UI" node_paths=PackedStringArray("main_script")]
+visible = false
+anchors_preset = -1
+anchor_left = 0.075
+anchor_top = 1.0
+anchor_right = 0.925
+anchor_bottom = 1.0
+offset_top = -150.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+script = ExtResource("3_panel")
+main_script = NodePath("../..")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/StickerPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/StickerPanel/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="CheckButton" type="Button" parent="UI" node_paths=PackedStringArray("quest_scene")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -250.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 90.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("6_font")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_check")
+text = "Проверить"
+script = ExtResource("5_check")
+quest_scene = NodePath("../..")
+result_scene = "res://src/Scenes/result.tscn"
+
+[node name="TaskPanel" type="PanelContainer" parent="UI"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -300.0
+offset_top = 20.0
+offset_right = 300.0
+offset_bottom = 120.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_task")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/TaskPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="TaskLabel" type="Label" parent="UI/TaskPanel/MarginContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_font")
+theme_override_font_sizes/font_size = 24
+text = "Загрузка задания..."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[connection signal="pressed" from="UI/Sidebar/BtnToggle" to="UI/Sidebar" method="_on_toggle_stickers_pressed"]
+[connection signal="pressed" from="UI/Sidebar/BtnClear" to="UI/Sidebar" method="_on_eraser_pressed"]

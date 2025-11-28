@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkftmm5jxxvr"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_x56x2"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_o82js"]
+height = 1.3412476
+radius = 0.5053711
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_x56x2"]
+height = 0.001
+radius = 0.25146484
+
+[node name="Cylinder" type="Node3D"]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+gravity_scale = 0.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.006781101, -0.0053737164, -0.00035953522)
+mesh = SubResource("CylinderMesh_x56x2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003971398, -0.039154053, 0)
+shape = SubResource("CylinderShape3D_o82js")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.017211795, 0.99701524, -0.017354205)
+shape = SubResource("CylinderShape3D_x56x2")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0045998096, -1.0067909, -0.014206886)
+shape = SubResource("CylinderShape3D_x56x2")

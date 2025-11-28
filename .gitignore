@@ -1,0 +1,12 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+icon.svg
+icon.svg.import
+splash.png.import
+*.import
+*.tmp
+*.tscn.uid
+*.tres.uid
+*.gd.uid
+*.shader.uid

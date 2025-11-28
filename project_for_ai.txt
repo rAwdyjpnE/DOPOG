@@ -1,0 +1,1455 @@
+# GODOT 4.5.1 PROJECT FILES
+# Generated for AI file editor
+# Total files: 25
+# Project root: C:\Users\Jason\Documents\test
+
+======================================================================
+TABLE OF CONTENTS
+======================================================================
+
+## Config (1 files)
+  - project.godot
+
+## Documentation (4 files)
+  - README.md
+  - project_for_ai.txt
+  - src\Doc\Button_stickers.md
+  - src\Doc\Input.md
+
+## Scenes (6 files)
+  - src\Nodes\Cube.tscn
+  - src\Nodes\circle.tscn
+  - src\Nodes\cylinder.tscn
+  - src\Scenes\Quest.tscn
+  - src\Scenes\result.tscn
+  - src\Scenes\test.tscn
+
+## Scripts (13 files)
+  - src\Scripts\ChangeSceneButton.gd
+  - src\Scripts\CheckAnswer.gd
+  - src\Scripts\ColorAns.gd
+  - src\Scripts\ContainerStickers.gd
+  - src\Scripts\Global.gd
+  - src\Scripts\ImageClass.gd
+  - src\Scripts\Input.gd
+  - src\Scripts\LabelInit.gd
+  - src\Scripts\ReadDB.gd
+  - src\Scripts\SidebarButtons.gd
+  - src\Scripts\StickerButton.gd
+  - src\Scripts\StickerPanel.gd
+  - src\Scripts\TriggerClass.gd
+
+## Shaders (1 files)
+  - src\Shaders\sky.gdshader
+
+
+======================================================================
+FILE CONTENTS
+======================================================================
+
+
+######################################################################
+# CATEGORY: Config
+######################################################################
+
+======================================================================
+FILE: project.godot
+======================================================================
+
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="DOPOG"
+run/main_scene="uid://coqfd16uqgrxp"
+config/features=PackedStringArray("4.5", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+G="*res://src/Scripts/Global.gd"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+
+[input]
+
+right_rot={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194321,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":68,"key_label":0,"unicode":100,"location":0,"echo":false,"script":null)
+]
+}
+left_rot={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194319,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":65,"key_label":0,"unicode":97,"location":0,"echo":false,"script":null)
+]
+}
+up_rot={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194320,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":87,"key_label":0,"unicode":119,"location":0,"echo":false,"script":null)
+]
+}
+down_rot={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194322,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":83,"key_label":0,"unicode":115,"location":0,"echo":false,"script":null)
+]
+}
+delete={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":81,"key_label":0,"unicode":113,"location":0,"echo":false,"script":null)
+]
+}
+placed_sticker={
+"deadzone": 0.2,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(652, 48),"global_position":Vector2(671, 144),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":true,"script":null)
+]
+}
+change_figure={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"location":0,"echo":false,"script":null)
+]
+}
+
+
+
+######################################################################
+# CATEGORY: Documentation
+######################################################################
+
+======================================================================
+FILE: README.md
+======================================================================
+
+# Как работать с репозиторием
+
+## Как собрать проект
+- Скачать godot 4.5.1
+- Клонировать репозиторий
+- Запустить godot и выбрать в нем DOPOG
+
+## Общии правила
+- Все что мы делаем находится в папке src
+- В src/Doc находится документация проекта
+- В src/Models находятся модели
+- В src/Nodes находятся объекты godot
+- В src/Scenes находятся сцены godot
+- В src/Scripts находятся скрипты godot
+- В src/Textures находятся текстуры
+
+## Правила написания скриптов
+- Используются двойные кавычки
+- Константы пишутся капсом
+- Названия функции, которые возвращают тип void, начинаются с "_" 
+
+## Как писать документацию
+- Документация пишется на русском языке
+- Файл в документации называется также как и скрипт
+- Сначала описывается общий смысл скрипта, потом переменных, потом функции
+- При описании переменных указывается: const/var название переменной `класс` - общее описание смысла переменной
+- При описании функции указывается: название(передаваемые аргументы) - общее описании смысла функции
+
+## Коммиты в git
+- Версия пишется такая же как и в последнем коммите, новая версия применяется только по соглашению со всей командой
+- Описание коммита пишется полностью на английском языке и описывает основные изменения в коде
+- При отправки изменений создайте свою ветку с названием вашего ника в тг. В конце недели, будем брать изменений в main ветку
+
+
+======================================================================
+FILE: project_for_ai.txt
+======================================================================
+
+# GODOT 4.5.1 PROJECT FILES
+# Generated for AI file editor
+# Total files: 25
+# Project root: C:\Users\Jason\Documents\test
+
+======================================================================
+TABLE OF CONTENTS
+======================================================================
+
+## Config (1 files)
+  - project.godot
+
+## Documentation (4 files)
+  - README.md
+  - project_for_ai.txt
+  - src\Doc\Button_stickers.md
+  - src\Doc\Input.md
+
+## Scenes (6 files)
+  - src\Nodes\Cube.tscn
+  - src\Nodes\circle.tscn
+  - src\Nodes\cylinder.tscn
+  - src\Scenes\Quest.tscn
+  - src\Scenes\result.tscn
+  - src\Scenes\test.tscn
+
+## Scripts (13 files)
+  - src\Scripts\ChangeSceneButton.gd
+  - src\Scripts\CheckAnswer.gd
+  - src\Scripts\ColorAns.gd
+  - src\Scripts\ContainerStickers.gd
+  - src\Scripts\Global.gd
+  - src\Scripts\ImageClass.gd
+  - src\Scripts\Input.gd
+  - src\Scripts\LabelInit.gd
+  - src\Scripts\ReadDB.gd
+  - src\Scripts\SidebarButtons.gd
+  - src\Scripts\StickerButton.gd
+  - src\Scripts\StickerPanel.gd
+  - src\Scripts\TriggerClass.gd
+
+## Shaders (1 files)
+  - src\Shaders\sky.gdshader
+
+
+======================================================================
+FILE CONTENTS
+======================================================================
+
+
+######################################################################
+# CATEGORY: Config
+######################################################################
+
+======================================================================
+FILE: project.godot
+======================================================================
+
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="DOPOG"
+run/main_scene="uid://coqfd16uqgrxp"
+config/features=PackedStringArray("4.5", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+G="*res://src/Scripts/Global.gd"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+
+[input]
+
+right_rot={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194321,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":68,"key_label":0,"unicode":100,"location":0,"echo":false,"script":null)
+]
+}
+left_rot={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194319,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":65,"key_label":0,"unicode":97,"location":0,"echo":false,"script":null)
+]
+}
+up_rot={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194320,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":87,"key_label":0,"unicode":119,"location":0,"echo":false,"script":null)
+]
+}
+down_rot={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194322,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":83,"key_label":0,"unicode":115,"location":0,"echo":false,"script":null)
+]
+}
+delete={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":81,"key_label":0,"unicode":113,"location":0,"echo":false,"script":null)
+]
+}
+placed_sticker={
+"deadzone": 0.2,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(652, 48),"global_position":Vector2(671, 144),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":true,"script":null)
+]
+}
+change_figure={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"location":0,"echo":false,"script":null)
+]
+}
+
+
+
+######################################################################
+# CATEGORY: Documentation
+######################################################################
+
+======================================================================
+FILE: README.md
+======================================================================
+
+# Как работать с репозиторием
+
+## Как собрать проект
+- Скачать godot 4.5.1
+- Клонировать репозиторий
+- Запустить godot и выбрать в нем DOPOG
+
+## Общии правила
+- Все что мы делаем находится в папке src
+- В src/Doc находится документация проекта
+- В src/Models находятся модели
+- В src/Nodes находятся объекты godot
+- В src/Scenes находятся сцены godot
+- В src/Scripts находятся скрипты godot
+- В src/Textures находятся текстуры
+
+## Правила написания скриптов
+- Используются двойные кавычки
+- Константы пишутся капсом
+- Названия функции, которые возвращают тип void, начинаются с "_" 
+
+## Как писать документацию
+- Документация пишется на русском языке
+- Файл в документации называется также как и скрипт
+- Сначала описывается общий смысл скрипта, потом переменных, потом функции
+- При описании переменных указывается: const/var название переменной `класс` - общее описание смысла переменной
+- При описании функции указывается: название(передаваемые аргументы) - общее описании смысла функции
+
+## Коммиты в git
+- Версия пишется такая же как и в последнем коммите, новая версия применяется только по соглашению со всей командой
+- Описание коммита пишется полностью на английском языке и описывает основные изменения в коде
+- При отправки изменений создайте свою ветку с названием вашего ника в тг. В конце недели, будем брать изменений в main ветку
+
+
+======================================================================
+FILE: src\Doc\Button_stickers.md
+======================================================================
+
+# Button_stickers.gd
+
+## Данный скрипт отвечает за смену стикера при нажатии кнопки
+
+### Переменные
+
+- var **link** `String` - хранит ссылку на текстуру для стикера
+- var **main_script_link** `Node3D` - ссылка на основной скрипт `Input.gd`
+
+### Функции
+
+- **_ready() -> void** - задает кнопке функцию **on_button_pressed**
+- **_on_button_pressed -> void** - при клике на кнопку меняет в скрипте `Input.gd` переменную `link_sticker`, чтобы поменять текстуру для стикера
+
+
+======================================================================
+FILE: src\Doc\Input.md
+======================================================================
+
+# Input.gd
+
+## обрабатывает ввод пользователя
+
+### Переменные
+
+- const **object** `Node3D` - ссылка основной объект на сцене
+- var **camera** `Camera3D` - ссылка на основную камеру на сцене
+- var **stickers** `Array` - массив, который хранит стикеры размещенные на сцене
+- var **stickers_lenght** `int` - количество стикеров в массиве **stickers**
+- var **link_sticker** `String` - хранит ссылку на путь текстуры стикера
+- var **preview_sticker** `Decal` - хранит ссылку на декаль, который показывает как будет размещен стикер на объекте
+- const **RIGHT** `str` - поворот вправо
+- const **LEFT** `str` - поворот влево
+- const **UP** `str` - поворот вверх
+- const **DOWN** `str` - поворот вниз
+- const **SPEED** `int` - скорость поворота объекта
+- const **RAY_LENGTH** `int` - длина луча, который выпускается из камеры для проверки, возможно ли поставить стикер
+- const **ROTATE_TIME** `float` - время, за которое объект поворачивается на 90 градусов
+- var **is_rotating** `bool` - true если объект поворачивается, false в ином случае
+
+### Функции
+
+- **_input(event) -> void** - обрабатывает ввод пользователя
+- **_rotate_object(axis, degrees) -> void** - поворачивает объект на указанное количество градусов вокруг заданной оси
+- **_place_sticker() -> void** - размещает стикер на объекте
+- **create_sticker() -> Decal** - создает стикер для дальнейшего размещения его на объекте
+- **_delete_last_sticker() -> void** - удаляет последний стикер, который был на объекте
+- **_safe_look_at(node: Node3D, pos: Vector3, normal: Vector3) -> void** - безопасный поворот стикера на объекте
+- **_create_preview_sticker() -> void** - создает стикер, который показывает как будет выглядить стикер при его размещении на объекте
+- **_update_preview() -> void** - меняет положения `preview_sticker` на объекте
+
+### For debug
+
+- var **sq** `Node3D` - ссылка на куб
+- var **ci** `Node3D` - ссылка на сферу
+- var **cy** `Node3D` - ссылкса на цилиндр
+- var **figures** `Array` - хранит все вохможные объекты для размещения на сцене
+- var **index_fig** `int` - количество объектов в **figures**
+- const **PosObject** `Vector3` - вектор, по которому появляется объект на сцене
+- func **_change_figure() -> void** - при нажатии на клавишу, меняет объекте на сцене беря их по кругу из массива **figures**
+
+
+
+######################################################################
+# CATEGORY: Scenes
+######################################################################
+
+======================================================================
+FILE: src\Nodes\Cube.tscn
+======================================================================
+
+[gd_scene load_steps=4 format=3 uid="uid://byivlraq6eyo2"]
+
+[ext_resource type="Script" path="res://src/Scripts/ContainerStickers.gd" id="1_stick"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_mllka"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mllka"]
+size = Vector3(0.8294678, 0.7315674, 0.001)
+
+[node name="Cube" type="Node3D"]
+script = ExtResource("1_stick")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+gravity_scale = 0.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.017021298, 0, -0.0014584064)
+mesh = SubResource("BoxMesh_mllka")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.017944336, 0.1038208, 1.4985)
+shape = SubResource("BoxShape3D_mllka")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(-1.3113416e-07, 0, -3, 0, 3, 0, 3, 0, -1.3113416e-07, -1.491608, 0.1038208, 0.003958583)
+shape = SubResource("BoxShape3D_mllka")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(-1.3113416e-07, 0, -3, 0, 3, 0, 3, 0, -1.3113416e-07, 1.5205282, 0.1038208, 0.003958583)
+shape = SubResource("BoxShape3D_mllka")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.017944336, 0.1038208, -1.5042604)
+shape = SubResource("BoxShape3D_mllka")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(3, 0, 0, 0, -1.3113417e-07, -3.0000002, 0, 3.0000002, -1.3113417e-07, 0.017944336, 1.5012275, -0.050928712)
+shape = SubResource("BoxShape3D_mllka")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(3, 0, 0, 0, -1.3113417e-07, -3.0000002, 0, 3.0000002, -1.3113417e-07, 0.017944336, -1.5059395, -0.050928712)
+shape = SubResource("BoxShape3D_mllka")
+
+======================================================================
+FILE: src\Nodes\circle.tscn
+======================================================================
+
+[gd_scene load_steps=3 format=3 uid="uid://dyiqv4rwhciaa"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_lo3dx"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0oroc"]
+
+[node name="Circle" type="Node3D"]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+gravity_scale = 0.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+mesh = SubResource("SphereMesh_lo3dx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("SphereShape3D_0oroc")
+
+
+======================================================================
+FILE: src\Nodes\cylinder.tscn
+======================================================================
+
+[gd_scene load_steps=4 format=3 uid="uid://bkftmm5jxxvr"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_x56x2"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_o82js"]
+height = 1.3412476
+radius = 0.5053711
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_x56x2"]
+height = 0.001
+radius = 0.25146484
+
+[node name="Cylinder" type="Node3D"]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+gravity_scale = 0.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.006781101, -0.0053737164, -0.00035953522)
+mesh = SubResource("CylinderMesh_x56x2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003971398, -0.039154053, 0)
+shape = SubResource("CylinderShape3D_o82js")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.017211795, 0.99701524, -0.017354205)
+shape = SubResource("CylinderShape3D_x56x2")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0045998096, -1.0067909, -0.014206886)
+shape = SubResource("CylinderShape3D_x56x2")
+
+
+======================================================================
+FILE: src\Scenes\Quest.tscn
+======================================================================
+
+[gd_scene load_steps=12 format=3 uid="uid://bvf2fw7fntvnt"]
+
+[ext_resource type="Script" uid="uid://b3a1anq1k55af" path="res://src/Scripts/Input.gd" id="1_lm37n"]
+[ext_resource type="FontFile" uid="uid://b2g2q4bt2l5gy" path="res://src/Fonts/ofont.ru_Aventura.ttf" id="2_uhidv"]
+[ext_resource type="Texture2D" uid="uid://b8t02vlnjkmcc" path="res://src/Images/5.2.png" id="3_77g36"]
+[ext_resource type="Script" uid="uid://djaf3him8dcpm" path="res://src/Scripts/StickerButton.gd" id="3_vna26"]
+[ext_resource type="Script" uid="uid://cgamlv0stagh1" path="res://src/Scripts/CheckAnswer.gd" id="5_vna26"]
+[ext_resource type="Texture2D" uid="uid://ctjr5julqmdk8" path="res://src/Images/1.4.png" id="6_n0skp"]
+[ext_resource type="Shader" uid="uid://cfxyesikv5370" path="res://src/Shaders/sky.gdshader" id="6_vna26"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_77g36"]
+bg_color = Color(0.52156866, 0.3882353, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uhidv"]
+shader = ExtResource("6_vna26")
+shader_parameter/skyColor = Color(0.54977554, 0.9647433, 0.8972107, 1)
+shader_parameter/horizonColor = Color(0.15667456, 0.15667456, 0.15667456, 1)
+
+[sub_resource type="Sky" id="Sky_77g36"]
+sky_material = SubResource("ShaderMaterial_uhidv")
+
+[sub_resource type="Environment" id="Environment_n0skp"]
+background_mode = 2
+sky = SubResource("Sky_77g36")
+
+[node name="Node3D" type="Node3D" node_paths=PackedStringArray("camera")]
+script = ExtResource("1_lm37n")
+camera = NodePath("Camera3D")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.6957875, 0.7182478, 0, -0.71824783, 0.69578743, -0.16517931, 5.1354733, 3.5669882)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.8804608, 0.47411892, 0, -0.47411892, 0.8804608, 0, 3, 5)
+fov = 100.0
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+
+[node name="CheckButton" type="Button" parent="CanvasGroup" node_paths=PackedStringArray("quest_scene")]
+offset_left = 1446.0
+offset_top = 30.0
+offset_right = 1890.0
+offset_bottom = 136.0
+theme_override_fonts/font = ExtResource("2_uhidv")
+theme_override_font_sizes/font_size = 56
+theme_override_styles/normal = SubResource("StyleBoxFlat_77g36")
+text = "Проверить"
+script = ExtResource("5_vna26")
+quest_scene = NodePath("../..")
+result_scene = "res://src/Scenes/result.tscn"
+
+[node name="Stickers" type="Node" parent="CanvasGroup"]
+
+[node name="Button" type="Button" parent="CanvasGroup/Stickers" node_paths=PackedStringArray("main_script_link")]
+offset_left = 52.0
+offset_top = 711.0
+offset_right = 375.0
+offset_bottom = 1033.0
+text = "
+"
+icon = ExtResource("3_77g36")
+icon_alignment = 1
+script = ExtResource("3_vna26")
+image_path = "res://src/Textures/5.2.png"
+main_script_link = NodePath("../../..")
+
+[node name="Button2" type="Button" parent="CanvasGroup/Stickers" node_paths=PackedStringArray("main_script_link")]
+offset_left = 402.0
+offset_top = 715.0
+offset_right = 725.0
+offset_bottom = 1038.0
+text = "
+"
+icon = ExtResource("6_n0skp")
+icon_alignment = 1
+script = ExtResource("3_vna26")
+image_path = "res://src/Textures/1.4.png"
+main_script_link = NodePath("../../..")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_n0skp")
+
+
+======================================================================
+FILE: src\Scenes\result.tscn
+======================================================================
+
+[gd_scene load_steps=7 format=3 uid="uid://br0ti6pc8c3rm"]
+
+[ext_resource type="Texture2D" uid="uid://dhljcuablh3f6" path="res://src/Images/test_back.png" id="1_2rs6u"]
+[ext_resource type="Script" uid="uid://bgvhqtuvfwle3" path="res://src/Scripts/ColorAns.gd" id="2_2a81j"]
+[ext_resource type="Script" uid="uid://4rxtltwoc7n3" path="res://src/Scripts/ChangeSceneButton.gd" id="2_tj8xe"]
+[ext_resource type="FontFile" uid="uid://b2g2q4bt2l5gy" path="res://src/Fonts/ofont.ru_Aventura.ttf" id="3_2rs6u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lasek"]
+bg_color = Color(0.52156866, 0.3882353, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1pt5o"]
+bg_color = Color(0.13333334, 0.02745098, 0.3529412, 1)
+
+[node name="Result" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+position = Vector2(980, 540)
+
+[node name="Node2D" type="Node2D" parent="CanvasGroup"]
+position = Vector2(-980, -540)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasGroup/Node2D"]
+offset_right = 1919.0
+offset_bottom = 1085.0
+texture = ExtResource("1_2rs6u")
+
+[node name="Button" type="Button" parent="CanvasGroup"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -279.0
+offset_top = 77.0
+offset_right = 276.05554
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_2rs6u")
+theme_override_font_sizes/font_size = 56
+theme_override_styles/normal = SubResource("StyleBoxFlat_lasek")
+text = "Продолжить"
+script = ExtResource("2_tj8xe")
+next_scene = "res://src/Scenes/test.tscn"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasGroup"]
+offset_left = -273.0
+offset_top = -62.0
+offset_right = 266.0
+offset_bottom = 40.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_2rs6u")
+theme_override_font_sizes/normal_font_size = 33
+text = "sssssss"
+script = ExtResource("2_2a81j")
+
+[node name="Button2" type="Button" parent="CanvasGroup"]
+offset_left = -279.0
+offset_top = 212.0
+offset_right = 273.0
+offset_bottom = 319.0
+theme_override_fonts/font = ExtResource("3_2rs6u")
+theme_override_font_sizes/font_size = 56
+theme_override_styles/normal = SubResource("StyleBoxFlat_1pt5o")
+text = "Назад"
+
+
+======================================================================
+FILE: src\Scenes\test.tscn
+======================================================================
+
+[gd_scene load_steps=10 format=3 uid="uid://coqfd16uqgrxp"]
+
+[ext_resource type="PackedScene" uid="uid://byivlraq6eyo2" path="res://src/Nodes/Cube.tscn" id="1_cube"]
+[ext_resource type="Script" path="res://src/Scripts/SidebarButtons.gd" id="2_sidebar"]
+[ext_resource type="Script" path="res://src/Scripts/StickerPanel.gd" id="3_panel"]
+[ext_resource type="Shader" path="res://src/Shaders/sky.gdshader" id="4_sky"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sky"]
+shader = ExtResource("4_sky")
+shader_parameter/skyColor = Color(0.18, 0.2, 0.25, 1)
+shader_parameter/horizonColor = Color(0.05, 0.05, 0.08, 1)
+
+[sub_resource type="Sky" id="Sky_env"]
+sky_material = SubResource("ShaderMaterial_sky")
+
+[sub_resource type="Environment" id="Environment_test"]
+background_mode = 2
+sky = SubResource("Sky_env")
+ambient_light_source = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn"]
+bg_color = Color(0.117647, 0.117647, 0.156863, 0.901961)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.0784314, 0.0980392, 0.137255, 0.921569)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.392157, 0.470588, 0.588235, 0.501961)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="Test" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_test")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, -0.75, 0.433013, 0, 5, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 1.5, 4.5)
+
+[node name="Cube" parent="." instance=ExtResource("1_cube")]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Sidebar" type="VBoxContainer" parent="UI" node_paths=PackedStringArray("sticker_panel", "container_node")]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -90.0
+offset_right = 100.0
+offset_bottom = 90.0
+grow_vertical = 2
+theme_override_constants/separation = 20
+script = ExtResource("2_sidebar")
+sticker_panel = NodePath("../StickerPanel")
+container_node = NodePath("../../Cube")
+
+[node name="BtnToggle" type="Button" parent="UI/Sidebar"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn")
+text = "📋"
+
+[node name="BtnClear" type="Button" parent="UI/Sidebar"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn")
+text = "🧹"
+
+[node name="StickerPanel" type="Panel" parent="UI" node_paths=PackedStringArray("container_node")]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -816.0
+offset_top = -150.0
+offset_right = 816.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+script = ExtResource("3_panel")
+container_node = NodePath("../../Cube")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/StickerPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/StickerPanel/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[connection signal="pressed" from="UI/Sidebar/BtnToggle" to="UI/Sidebar" method="_on_toggle_stickers_pressed"]
+[connection signal="pressed" from="UI/Sidebar/BtnClear" to="UI/Sidebar" method="_on_eraser_pressed"]
+
+
+######################################################################
+# CATEGORY: Scripts
+######################################################################
+
+======================================================================
+FILE: src\Scripts\ChangeSceneButton.gd
+======================================================================
+
+extends Button
+
+@export var next_scene: String
+
+func _ready() -> void:
+	self.pressed.connect(_go_to_next_scene)
+
+func _go_to_next_scene() -> void:
+	get_tree().change_scene_to_file(next_scene)
+
+
+======================================================================
+FILE: src\Scripts\CheckAnswer.gd
+======================================================================
+
+extends Button
+
+@export var quest_scene: Node3D
+@export var result_scene: String
+
+const MAX_DISTANCE: float = 1
+
+func _ready() -> void:
+	self.pressed.connect(_check_result)
+	quest_scene = get_parent().get_parent()
+
+func _check_result() -> void:
+	if not quest_scene:
+		push_error("Error: quest_scene wasn't found")
+		return
+	
+	var correct: Array = []
+	var wrong: Array = []
+	
+	for sticker in quest_scene.stickers:
+		var decal_pos = sticker.get("link").position
+		var decal_texture = sticker.get("name")
+		
+		var trig = null
+		
+		for trigger in quest_scene.trigger_list:
+			if trigger.__texture_sticker == decal_texture:
+				trig = trigger
+				break
+		
+		if trig != null and trig.__pos.distance_to(decal_pos) <= MAX_DISTANCE:
+			correct.append(sticker)
+		else:
+			if trig != null:
+				print(trig.__pos.distance_to(decal_pos))
+			wrong.append(sticker)
+	
+	G.correct = correct.size()
+	G.wrong = wrong.size()
+	get_tree().change_scene_to_file(result_scene)
+
+
+======================================================================
+FILE: src\Scripts\ColorAns.gd
+======================================================================
+
+extends RichTextLabel
+
+func _ready() -> void:
+	var correct = G.correct
+	var wrong = G.wrong
+	var correct_text = "Правильно решено: %d" % correct
+	var wrong_text = "Неправильно решено: %d" % wrong
+	var result_text = ""
+	if correct > 0:
+		result_text += "[color=green]" + correct_text + "[/color]\n"
+	else:
+		result_text += correct_text + "\n"
+	if wrong > 0:
+		result_text += "[color=red]" + wrong_text + "[/color]"
+	else:
+		result_text += wrong_text
+	self.bbcode_enabled = true
+	self.text = result_text
+
+
+======================================================================
+FILE: src\Scripts\ContainerStickers.gd
+======================================================================
+
+extends Node3D
+
+var stickers: Array[Node3D] = []
+
+# Применяет стикер на переднюю грань контейнера
+func apply_sticker(texture_path: String, _pos: Vector3 = Vector3.ZERO) -> void:
+	var texture = load(texture_path)
+	if not texture:
+		push_error("Failed to load texture: " + texture_path)
+		return
+
+	var decal = Decal.new()
+	decal.texture_albedo = texture
+	decal.size = Vector3(1, 1, 1) # Размер проекции
+	
+	# Настройка видимости
+	decal.cull_mask = 1 # Отображать на слое 1
+	
+	add_child(decal)
+	
+	# Позиционирование на передней грани (для куба 3x3x3)
+	# Z = 1.5 (передняя грань), немного выносим вперед (1.51)
+	decal.position = Vector3(0, 0, 1.51)
+	
+	# Поворот: Decal проецирует по оси -Y. Чтобы проецировать на +Z, нужно повернуть X на -90
+	decal.rotation_degrees = Vector3(-90, 0, 0)
+	
+	stickers.append(decal)
+
+# Удаляет все стикеры
+func remove_all_stickers() -> void:
+	for sticker in stickers:
+		if is_instance_valid(sticker):
+			sticker.queue_free()
+	stickers.clear()
+
+======================================================================
+FILE: src\Scripts\Global.gd
+======================================================================
+
+extends Node
+
+var quest_list: Dictionary = {}
+var correct: int = 0
+var wrong: int = 0
+
+
+======================================================================
+FILE: src\Scripts\ImageClass.gd
+======================================================================
+
+extends Resource
+class_name ImageClass
+
+@export var image_path: String
+@export var image_name: String = ""
+
+func _init(path: String = "", name: String = "") -> void:
+	image_path = path
+	image_name = name
+
+
+======================================================================
+FILE: src\Scripts\Input.gd
+======================================================================
+
+extends Node3D
+
+@export var object: Node3D
+@export var camera: Camera3D
+
+var is_rotating = false
+const ROTATE_TIME = 0.5
+const RIGHT = "right"
+const LEFT = "left"
+const UP = "up"
+const DOWN = "down"
+const SPEED = 90
+const RAY_LENGTH = 1_000
+
+var stickers : Array[Dictionary] = []
+var stickers_lenght : int = 0
+
+var link_sticker : String
+
+var preview_sticker: Decal = null
+
+# for debug
+var sq = load("res://src/Nodes/Cube.tscn")
+var ci = load("res://src/Nodes/circle.tscn")
+var cy = load("res://src/Nodes/cylinder.tscn")
+var figures = [sq, ci, cy]
+var index_fig = 0
+const PosObeject = Vector3(0, 1, 0)
+
+# start new
+var trigger_list : Array
+var quest: Dictionary = G.quest_list
+
+# position 
+const BACK_TR = Vector3(1, 1, 1)
+const FRONT_TR = Vector3(0, 0.795, 1.489)
+const RIGHT_TR = Vector3(1, 1, 1)
+const LEFT_TR= Vector3(1, 1, 1)
+
+func _ready() -> void:
+	#print(quest)
+	if quest.get("front") != null and quest.get("front_path") != null:
+		trigger_list.append(Trigger.new(FRONT_TR, quest.get("front_path")))
+	if quest.get("back") != null and quest.get("back_path") != null:
+		trigger_list.append(Trigger.new(BACK_TR, quest.get("back_path")))
+	if quest.get("right") != null and quest.get("right_path") != null:
+		trigger_list.append(Trigger.new(RIGHT_TR, quest.get("right_path")))
+	if quest.get("left") != null and quest.get("left_path") != null:
+		trigger_list.append(Trigger.new(LEFT_TR, quest.get("left_path")))
+	
+	print(trigger_list, " - in main script")
+# end new
+
+func _input(event) -> void:
+	if event is InputEventMouseMotion:
+		_update_preview()
+	if Input.is_action_just_pressed("right_rot"):
+		_rotate_object(Vector3.UP, -90)
+	if Input.is_action_just_pressed("left_rot"):
+		_rotate_object(Vector3.UP, 90)
+	if Input.is_action_just_pressed("up_rot"):
+		_rotate_object(Vector3.RIGHT, -90)
+	if Input.is_action_just_pressed("down_rot"):
+		_rotate_object(Vector3.RIGHT, 90)
+	if Input.is_action_just_pressed("placed_sticker"):
+		_place_sticker()
+	if Input.is_action_just_pressed("delete"):
+		_delete_last_sticker()
+	# for debug
+	if Input.is_action_just_pressed("change_figure"):
+		_change_figure() 
+
+func _safe_look_at(node: Node3D, pos: Vector3, normal: Vector3) -> void:
+	var up = Vector3.UP
+	if abs(normal.dot(up)) > 0.95:
+		up = Vector3.RIGHT
+	node.look_at(pos + normal, up)
+
+func _rotate_object(axis, degrees) -> void:
+	if object == null || is_rotating:
+		return
+	is_rotating = true
+
+	var from = object.global_transform
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_OUT)
+
+	tween.tween_method(func(progress):
+		var rotated = from.rotated(axis, deg_to_rad(degrees) * progress)
+		object.global_transform = rotated,
+		0.0, 
+		1.0, 
+		ROTATE_TIME
+	)
+
+	tween.tween_callback(func():
+		is_rotating = false
+	)
+
+func _place_sticker() -> void:
+	if camera == null:
+		push_error("Error: camera is null")
+		return
+
+	var mouse_pos = get_viewport().get_mouse_position()
+	var start = camera.project_ray_origin(mouse_pos)
+	var dir = camera.project_ray_normal(mouse_pos)
+	var end = start + dir * RAY_LENGTH
+
+	var ray = PhysicsRayQueryParameters3D.create(start, end)
+	ray.collide_with_bodies = true
+	ray.collide_with_areas = true
+
+	var space = get_world_3d().direct_space_state
+	var result = space.intersect_ray(ray)
+
+	if result:
+		var pos = result.position
+		var normal = result.normal
+		var collider = result.collider
+	
+		if abs(normal.dot(Vector3.UP)) > 0.95:
+			return 
+			
+		var sticker: Decal = create_sticker()
+
+		if sticker:
+			if collider is Node3D:
+				collider.add_child(sticker)
+			else:
+				add_child(sticker)
+			
+			sticker.global_transform.origin = pos
+			_safe_look_at(sticker, pos, normal)
+			sticker.rotate_object_local(Vector3(1, 0, 0), deg_to_rad(90))
+
+func create_sticker() -> Decal:
+	var decal : Decal = Decal.new()
+	if link_sticker:
+		var texture : Texture2D = load(link_sticker)
+		
+		decal.texture_albedo = texture
+		decal.size = Vector3(0.3, 0.3, 0.3)
+		decal.upper_fade = 0.01
+		decal.lower_fade = 0.01
+		print("sticker was created")
+		
+		var data = {"name": link_sticker, "link": decal}
+		
+		stickers.append(data)
+		stickers_lenght += 1
+		
+		return decal
+	push_error("Sticker img wasn't selected") 
+	return
+	 
+	
+func _delete_last_sticker() -> void:
+	if stickers_lenght > 0:
+		var sticker : Dictionary = stickers.pop_at(stickers_lenght - 1)
+		sticker.get("link").queue_free()
+		stickers_lenght -= 1
+
+func _create_preview_sticker() -> void:
+	if preview_sticker != null:
+		preview_sticker.queue_free()
+	
+	preview_sticker = Decal.new()	
+	if link_sticker == null:
+		push_error("Erorr: texture wasn't found")
+		return
+		
+	var texture : Texture2D = load(link_sticker)
+	preview_sticker.texture_albedo = texture
+	preview_sticker.size = Vector3(0.3, 0.3, 0.3)
+	preview_sticker.upper_fade = 0.01
+	preview_sticker.lower_fade = 0.01
+	
+	preview_sticker.modulate = Color(1, 1, 1, 0.3)
+	preview_sticker.visible = false
+	
+	add_child(preview_sticker)
+
+func _update_preview() -> void:
+	if camera == null or preview_sticker == null:
+		return
+
+	var mouse_pos = get_viewport().get_mouse_position()
+	var start = camera.project_ray_origin(mouse_pos)
+	var dir = camera.project_ray_normal(mouse_pos)
+	var end = start + dir * RAY_LENGTH
+
+	var ray = PhysicsRayQueryParameters3D.create(start, end)
+	ray.collide_with_bodies = true
+	ray.collide_with_areas = true
+
+	var space = get_world_3d().direct_space_state
+	var result = space.intersect_ray(ray)
+
+	if result:
+		var pos = result.position
+		var normal = result.normal
+		
+		if abs(normal.dot(Vector3.UP)) > 0.95:
+			return 
+		
+		if not preview_sticker.visible:
+			preview_sticker.visible = true
+		preview_sticker.global_transform.origin = pos
+		_safe_look_at(preview_sticker, pos, normal)
+		preview_sticker.rotate_object_local(Vector3(1, 0, 0), deg_to_rad(90))
+	else:
+		if preview_sticker.visible:
+			preview_sticker.visible = false
+
+# for debug
+func _change_figure() -> void:
+	if object:
+		object.queue_free()
+		index_fig += 1
+	
+	stickers.clear()
+	stickers_lenght = 0
+	var new_obj = figures[index_fig % figures.size()]
+	object = new_obj.instantiate()
+	object.scale = Vector3(1, 1, 1)
+	add_child(object)
+	
+	object.position = Vector3.ZERO
+
+
+======================================================================
+FILE: src\Scripts\LabelInit.gd
+======================================================================
+
+extends Label
+
+func _ready() -> void:
+	var correct = G.correct
+	var wrong = G.wrong
+	self.text = "Правильно решено: %d\nНеправильно решено: %d" % [correct, wrong]	
+
+
+======================================================================
+FILE: src\Scripts\ReadDB.gd
+======================================================================
+
+extends Button
+
+@export var label_count_quests: Node3D
+@export var QuestScene: String
+
+func _ready() -> void:
+	self.pressed.connect(switch_to_scene)
+
+func switch_to_scene():
+	var data = read_db()
+	G.quest_list = data[0]
+	get_tree().change_scene_to_file(QuestScene)
+
+func read_db():
+	var data = SQLite.new()
+	data.path = "res://src/DataBase/db.db"
+	data.open_db()
+	var result = data.query("
+	SELECT 
+    tasks.*,
+    
+    s_back.id    AS back_id,
+    s_back.sticker  AS back_path,
+    
+    s_front.id   AS front_id,
+    s_front.sticker AS front_path,
+    
+    s_right.id   AS right_id,
+    s_right.sticker AS right_path,
+    
+    s_left.id    AS left_id,
+    s_left.sticker  AS left_path,
+    
+    t.id         AS truck_id,
+    t.truck       AS truck_name,
+    
+    th.id        AS theme_id,
+    th.theme      AS theme_name
+	
+	FROM tasks
+	LEFT JOIN stickers AS s_back  ON s_back.id  = tasks.back
+	LEFT JOIN stickers AS s_front ON s_front.id = tasks.front
+	LEFT JOIN stickers AS s_right ON s_right.id = tasks.right
+	LEFT JOIN stickers AS s_left  ON s_left.id  = tasks.left
+
+	LEFT JOIN trucks   AS t  ON t.id  = tasks.truck
+	LEFT JOIN themes   AS th ON th.id = tasks.theme;
+	")
+	
+	var return_list = []
+	
+	if result:
+		for row in data.query_result:
+			return_list.append(row)
+	else:
+		push_error("Error: query was failed " + data.error_message)
+
+	data.close_db()
+	return return_list
+
+
+======================================================================
+FILE: src\Scripts\SidebarButtons.gd
+======================================================================
+
+extends VBoxContainer
+
+@export var sticker_panel: Control
+@export var container_node: Node3D
+
+func _ready() -> void:
+	# Настройка кнопок, если они добавлены через редактор, 
+	# но здесь мы предполагаем, что они уже есть в сцене (созданы в test.tscn)
+	pass
+
+func _on_toggle_stickers_pressed() -> void:
+	if sticker_panel:
+		if sticker_panel.visible:
+			sticker_panel.hide_panel()
+		else:
+			sticker_panel.show_panel()
+
+func _on_eraser_pressed() -> void:
+	# Анимация пульсации
+	var btn = get_child(1) # Вторая кнопка
+	if btn:
+		var tween = create_tween()
+		tween.tween_property(btn, "scale", Vector2(0.9, 0.9), 0.15)
+		tween.tween_property(btn, "scale", Vector2(1.0, 1.0), 0.15)
+	
+	if container_node and container_node.has_method("remove_all_stickers"):
+		container_node.remove_all_stickers()
+
+======================================================================
+FILE: src\Scripts\StickerButton.gd
+======================================================================
+
+extends Button
+
+@export var image_path: String = ""
+@export var main_script_link: Node3D
+
+func _ready() -> void:
+	self.pressed.connect(_on_button_pressed)
+
+func _on_button_pressed() -> void:
+	var path_to_use: String = ""
+	
+	if image_path:
+		path_to_use = image_path
+	
+	if not path_to_use:
+		push_error("StickerButton: image path is not set.")
+		return
+	
+	if not main_script_link:
+		push_error("StickerButton: main_script_link is not set")
+		return
+	
+	#Устанавливаем путь картинки в основной скрипт для формирования decal
+	main_script_link.link_sticker = path_to_use
+	main_script_link._create_preview_sticker()
+	print("StickerButton: Changed image path to: ", path_to_use)
+
+
+======================================================================
+FILE: src\Scripts\StickerPanel.gd
+======================================================================
+
+extends Panel
+
+signal sticker_selected(id: String, texture_path: String)
+
+@export var container_node: Node3D
+
+const STICKERS_DATA = [
+	{"id": "5.2", "path": "res://src/Textures/5.2.png", "label": "Class 5.2"},
+	{"id": "1.4", "path": "res://src/Textures/1.4.png", "label": "UN 1.4"}
+]
+
+@onready var container_box = $ScrollContainer/HBoxContainer
+
+func _ready() -> void:
+	# Начальное состояние
+	visible = false
+	_populate_stickers()
+
+func show_panel() -> void:
+	if visible: return
+	
+	visible = true
+	var screen_h = get_viewport_rect().size.y
+	var target_y = screen_h - size.y - 10 # 10px отступ
+	
+	position.y = screen_h + 10 # Старт снизу
+	
+	var tween = create_tween()
+	tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
+	tween.tween_property(self, "position:y", target_y, 0.3)
+
+func hide_panel() -> void:
+	if not visible: return
+	
+	var screen_h = get_viewport_rect().size.y
+	var target_y = screen_h + 10
+	
+	var tween = create_tween()
+	tween.set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC)
+	tween.tween_property(self, "position:y", target_y, 0.25)
+	tween.tween_callback(func(): visible = false)
+
+func _populate_stickers() -> void:
+	for child in container_box.get_children():
+		child.queue_free()
+		
+	for data in STICKERS_DATA:
+		var btn = TextureButton.new()
+		btn.custom_minimum_size = Vector2(110, 110)
+		btn.ignore_texture_size = true
+		btn.stretch_mode = TextureButton.STRETCH_KEEP_ASPECT_CENTERED
+		
+		# Загрузка текстуры (используем placeholder если нет файла)
+		if ResourceLoader.exists(data.path):
+			btn.texture_normal = load(data.path)
+		
+		btn.pressed.connect(_on_sticker_button_pressed.bind(data.id, data.path))
+		
+		# Добавляем подпись
+		var lbl = Label.new()
+		lbl.text = data.label
+		lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		lbl.vertical_alignment = VERTICAL_ALIGNMENT_BOTTOM
+		lbl.set_anchors_preset(Control.PRESET_FULL_RECT)
+		lbl.add_theme_color_override("font_color", Color.WHITE)
+		lbl.add_theme_font_size_override("font_size", 14)
+		btn.add_child(lbl)
+		
+		container_box.add_child(btn)
+
+func _on_sticker_button_pressed(id: String, path: String) -> void:
+	emit_signal("sticker_selected", id, path)
+	if container_node and container_node.has_method("apply_sticker"):
+		container_node.apply_sticker(path)
+
+======================================================================
+FILE: src\Scripts\TriggerClass.gd
+======================================================================
+
+extends Resource
+
+class_name Trigger
+@export var __pos: Vector3
+@export var __texture_sticker: String
+
+func _init(pos: Vector3, link_sticker: String) -> void:
+	self.__pos = pos
+	self.__texture_sticker = link_sticker
+
+
+
+######################################################################
+# CATEGORY: Shaders
+######################################################################
+
+======================================================================
+FILE: src\Shaders\sky.gdshader
+======================================================================
+
+shader_type sky;
+
+uniform vec3 skyColor: source_color;
+uniform vec3 horizonColor: source_color;
+
+void sky() {
+	float col = clamp(EYEDIR.y / 0.1, 0.0, 1.0);
+	vec3 finalColor = mix(horizonColor, skyColor, col);
+	COLOR = finalColor * LIGHT0_COLOR;
+}
+
+
+======================================================================
+# END OF PROJECT FILES
+======================================================================

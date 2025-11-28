@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://byivlraq6eyo2"]
+
+[ext_resource type="Script" path="res://src/Scripts/ContainerStickers.gd" id="1_stick"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_mllka"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mllka"]
+size = Vector3(0.8294678, 0.7315674, 0.001)
+
+[node name="Cube" type="Node3D"]
+script = ExtResource("1_stick")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+gravity_scale = 0.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.017021298, 0, -0.0014584064)
+mesh = SubResource("BoxMesh_mllka")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.017944336, 0.1038208, 1.4985)
+shape = SubResource("BoxShape3D_mllka")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(-1.3113416e-07, 0, -3, 0, 3, 0, 3, 0, -1.3113416e-07, -1.491608, 0.1038208, 0.003958583)
+shape = SubResource("BoxShape3D_mllka")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(-1.3113416e-07, 0, -3, 0, 3, 0, 3, 0, -1.3113416e-07, 1.5205282, 0.1038208, 0.003958583)
+shape = SubResource("BoxShape3D_mllka")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.017944336, 0.1038208, -1.5042604)
+shape = SubResource("BoxShape3D_mllka")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(3, 0, 0, 0, -1.3113417e-07, -3.0000002, 0, 3.0000002, -1.3113417e-07, 0.017944336, 1.5012275, -0.050928712)
+shape = SubResource("BoxShape3D_mllka")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(3, 0, 0, 0, -1.3113417e-07, -3.0000002, 0, 3.0000002, -1.3113417e-07, 0.017944336, -1.5059395, -0.050928712)
+shape = SubResource("BoxShape3D_mllka")

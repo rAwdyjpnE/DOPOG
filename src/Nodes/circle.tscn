@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyiqv4rwhciaa"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_lo3dx"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0oroc"]
+
+[node name="Circle" type="Node3D"]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+gravity_scale = 0.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+mesh = SubResource("SphereMesh_lo3dx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("SphereShape3D_0oroc")
